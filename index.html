@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Premium Sound Recorder Application">
+    <title>Sonic Capture | A Premium Sound Recorder</title>
+    <meta name="description" content="A premium web-based sound recorder with real-time visualization.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Sonic Capture</h1>
+            <p>High Fidelity Audio Recorder</p>
+            <p class="subtitle">by <a href="https://github.com/papan-connect" id="creator-link">Papan</a></p>
+        </header>
+
+        <main>
+            <div class="visualizer-container">
+                <canvas id="visualizer"></canvas>
+            </div>
+
+            <div class="timer-display">
+                <span id="time-display">00:00</span>
+            </div>
+
+            <div class="controls">
+                <button id="record-btn" class="control-btn" title="Start Recording">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <circle cx="12" cy="12" r="8" fill="currentColor" />
+                    </svg>
+                    <span>Record</span>
+                </button>
+
+                <button id="pause-btn" class="control-btn" disabled title="Pause Recording">
+                    <!-- Pause Icon -->
+                    <svg class="icon-pause" viewBox="0 0 24 24" width="24" height="24">
+                        <rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor" />
+                        <rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor" />
+                    </svg>
+                    <!-- Play Icon (Hidden by default) -->
+                    <svg class="icon-play" viewBox="0 0 24 24" width="24" height="24" style="display: none;">
+                        <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" />
+                    </svg>
+                    <span>Pause</span>
+                </button>
+
+                <button id="stop-btn" class="control-btn" disabled title="Stop Recording">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor" />
+                    </svg>
+                    <span>Stop</span>
+                </button>
+
+                <button id="save-btn" class="control-btn secondary" disabled title="Save Recording">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>Save</span>
+                </button>
+
+                <button id="reset-btn" class="control-btn" disabled title="Reset Recording">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3 3v5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <span>Reset</span>
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <div id="status-message">Ready to record</div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
